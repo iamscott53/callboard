@@ -2,10 +2,10 @@
 class Database{
 
     private $connection = null;
-    protected $host       = "localhost:3306";
-    protected $dbname     = "adm_trugenx_kitboard";
-    protected $username   = "kitboard";
-    protected $password   = "2@r4ZnhsvRAim1ov";
+    protected $host       = "127.0.0.1";
+    protected $dbname     = "kboard_db_951";
+    protected $username   = "kboard_usr_159";
+    protected $password   = "SyAT8sOvG*C9cK6S";
     
     public function __construct(){
         try{        
