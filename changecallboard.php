@@ -153,6 +153,22 @@
                         </div>
                     </td> <!-- Delivered Kits -->
                   </tr>
+				  <tr>
+                    <td>marissa</td>
+                    <?php foreach($days as $day) { ?>
+                        <td>
+                            <div class="d-flex align-items-center justify-content-center">
+                                <input type="number" value="<?php echo get_request_qty('marissa', date('Y-m-d', strtotime(''.$day.' this week'))); ?>" name="<?php echo $day; ?>[]" data-name="marissa" data-date="<?php echo date('Y-m-d', strtotime(''.$day.' this week')); ?>">
+                            </div>
+                        </td>    
+                    <?php } ?>
+                    <td data-request="total"><?php echo get_total_request_by('marissa'); ?></td>
+                    <td>
+                        <div class="d-flex align-items-center justify-content-center">
+                            <input type="number" value="<?php echo get_delivered_qty('marissa'); ?>" name="delivered[]" data-name="marissa" data-date="<?php echo date('Y-m-d'); ?>">
+                        </div>
+                    </td> <!-- Delivered Kits -->
+                  </tr>
 
                   <tr>
                     <td>Goals</td>

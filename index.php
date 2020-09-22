@@ -114,6 +114,14 @@
                     <td data-request="total"><?php echo get_total_request_by('hanna'); ?></td>
                     <td><?php echo get_delivered_qty('hanna'); ?></td> <!-- Delivered Kits -->
                   </tr>
+				  <tr>
+                    <td>marissa</td>
+                    <?php foreach($days as $day) { ?>
+                        <td><?php echo get_request_qty('marissa', date('Y-m-d', strtotime(''.$day.' this week'))); ?></td>    
+                    <?php } ?>
+                    <td data-request="total"><?php echo get_total_request_by('marissa'); ?></td>
+                    <td><?php echo get_delivered_qty('marissa'); ?></td> <!-- Delivered Kits -->
+                  </tr>
 
                   <tr>
                     <td>Goals</td>
