@@ -1,3 +1,10 @@
+<?php
+$permission = (isset($_GET["trugenxmgr"]) && trim($_GET["trugenxmgr"]) == 'true');
+if(!$permission) {
+	die("You do not have permission to access this page.");
+}
+?>
+
 <?php include 'functions.php'; ?>
 <html>
 <head>
