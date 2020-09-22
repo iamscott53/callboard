@@ -39,7 +39,7 @@ class Database{
         }
     }
     
-    // Insert a row/s in a Database Table 
+    // Insert a row/s in a Database Table
     public function insert( $statement = "" , $parameters = [] ){
         try{
             $this->executeStatement( $statement , $parameters );
