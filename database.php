@@ -1,6 +1,6 @@
 <?php
 class Database{
-
+// Ctreated by Scott Smith
     private $connection = null;
     protected $host       = "127.0.0.1";
     protected $dbname     = "kboard_db_951";

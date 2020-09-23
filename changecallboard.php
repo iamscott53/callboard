@@ -7,7 +7,7 @@ if(!$permission) {
 
 <?php include 'functions.php'; ?>
 <html>
-<head>
+<head> <!-- Made by Scott Smith -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Requisitions Processed</title>
@@ -59,7 +59,7 @@ if(!$permission) {
         }
     </style>
   </head>
-  <body>
+  <body> 
       <form autocomplete="off">
         <div style="background-color:#28a745;">
             <h1 class="text-white mb-0 text-center">Requisitions Processed</h1>
@@ -291,4 +291,4 @@ if(!$permission) {
         }(jQuery));
     </script>
 </body>
-</html>
+</html> 

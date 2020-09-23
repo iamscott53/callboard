@@ -1,5 +1,5 @@
 <?php
-    include 'database.php';
+    include 'database.php'; // Ctreated by Scott Smith
     $db = new Database();
     $days = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday'];
 
