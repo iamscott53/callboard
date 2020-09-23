@@ -5,6 +5,7 @@ Record reqs faxed in by PCP for each of the MAs, and keep a record of reqs and k
 ## Functions ToDo
 1. Report off the database
 2. More security to ensure data is not messed with
+3. More automation
 
 ## To add more MAs
 To add more people, just edit **index.php and changecallboard.php** and copy the table row for one person and paste it under the last entry. Replace the copied name with the new name. Do this in both files and you are good to go
