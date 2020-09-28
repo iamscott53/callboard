@@ -96,18 +96,18 @@ if(!$permission) {
                     </td>
                   </tr>
                   <tr>
-                    <td>ruby</td>
+                    <td>tara</td>
                     <?php foreach($days as $day) { ?>
                         <td>
                             <div class="d-flex align-items-center justify-content-center">
-                                <input type="number" value="<?php echo get_request_qty('ruby', date('Y-m-d', strtotime(''.$day.' this week'))); ?>" name="<?php echo $day; ?>[]" data-name="ruby" data-date="<?php echo date('Y-m-d', strtotime(''.$day.' this week')); ?>">
+                                <input type="number" value="<?php echo get_request_qty('tara', date('Y-m-d', strtotime(''.$day.' this week'))); ?>" name="<?php echo $day; ?>[]" data-name="tara" data-date="<?php echo date('Y-m-d', strtotime(''.$day.' this week')); ?>">
                             </div>
                         </td>    
                     <?php } ?>
-                    <td data-request="total"><?php echo get_total_request_by('ruby'); ?></td>
+                    <td data-request="total"><?php echo get_total_request_by('tara'); ?></td>
                     <td>
                         <div class="d-flex align-items-center justify-content-center">
-                            <input type="number" value="<?php echo get_delivered_qty('ruby'); ?>" name="delivered[]" data-name="ruby" data-date="<?php echo date('Y-m-d'); ?>">
+                            <input type="number" value="<?php echo get_delivered_qty('tara'); ?>" name="delivered[]" data-name="tara" data-date="<?php echo date('Y-m-d'); ?>">
                         </div>
                     </td>
                   </tr>

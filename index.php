@@ -82,12 +82,12 @@
                     <td><?php echo get_delivered_qty('erin'); ?></td>
                   </tr>
                   <tr>
-                    <td>ruby</td>
+                    <td>tara</td>
                     <?php foreach($days as $day) { ?>
-                        <td><?php echo get_request_qty('ruby', date('Y-m-d', strtotime(''.$day.' this week'))); ?></td>    
+                        <td><?php echo get_request_qty('tara', date('Y-m-d', strtotime(''.$day.' this week'))); ?></td>    
                     <?php } ?>
-                    <td data-request="total"><?php echo get_total_request_by('ruby'); ?></td>
-                    <td><?php echo get_delivered_qty('ruby'); ?></td>
+                    <td data-request="total"><?php echo get_total_request_by('tara'); ?></td>
+                    <td><?php echo get_delivered_qty('tara'); ?></td>
                   </tr>
                   <tr>
                     <td>angela</td>
