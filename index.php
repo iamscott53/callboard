@@ -74,7 +74,7 @@
                 </thead>
                 <tbody>
                   <tr>
-                    <td>erin</td>
+                    <td>jackie</td>
                     <?php foreach($days as $day) { ?>
                         <td><?php echo get_request_qty('erin', date('Y-m-d', strtotime(''.$day.' this week'))); ?></td>
                     <?php } ?>
