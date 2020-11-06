@@ -80,7 +80,7 @@ if(!$permission) {
                 </thead>
                 <tbody>
                   <tr>
-                    <td>erin</td>
+                    <td>jackie</td>
                     <?php foreach($days as $day) { ?>
                         <td>
                             <div class="d-flex align-items-center justify-content-center">
