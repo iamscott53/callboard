@@ -35,12 +35,11 @@ if(!$permission) {
         input[type="number"] {
             height: 26px;
             border: none;
-            padding: 5px 0;
+            padding: 5px 10px;
             width: auto;
             text-align: center;
-            max-width: 34px;
-            display: block;
-            margin: 0 auto;
+            max-width: 50px;
+            margin: 0;
             background-color: transparent;
             color: #fff;
             appearance: textfield;
@@ -57,18 +56,6 @@ if(!$permission) {
         table th,
         table td {
             vertical-align: middle !important;
-        }
-        tbody td {
-            padding: 0 !important;
-        }
-        td .row {
-            margin: 0;
-        }
-        td .col {
-            padding: .75rem 0;
-        }
-        td[data-request="total"] .col {
-            line-height: 78px;
         }
     </style>
   </head>
@@ -92,179 +79,122 @@ if(!$permission) {
                   </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>jackie</td> <!-- name must be lowercase and unique -->
-                        <?php foreach($days as $day) { ?>
-                            <td>
-                                <div class="row">
-                                    <div class="col"><input type="number" value="<?php echo get_request_qty('erin', date('Y-m-d', strtotime(''.$day.' this week')), 1); ?>" name="<?php echo $day; ?>[]" data-name="erin" data-date="<?php echo date('Y-m-d', strtotime(''.$day.' this week')); ?>" data-campaign="1"></div>
-                                    <div class="col border-left"><input type="number" value="<?php echo get_request_qty('erin', date('Y-m-d', strtotime(''.$day.' this week')), 2); ?>" name="<?php echo $day; ?>[]" data-name="erin" data-date="<?php echo date('Y-m-d', strtotime(''.$day.' this week')); ?>" data-campaign="2"></div>
-                                </div>
-                            </td>
-                        <?php } ?>
-                        <td data-request="total">
-                            <div class="row">
-                                <div class="col"><?php echo get_total_request_by('erin', 1); ?></div>
-                                <div class="col border-left"><?php echo get_total_request_by('erin', 2); ?></div>
-                            </div>
-                        </td>
+                  <tr>
+                    <td>jackie</td>
+                    <?php foreach($days as $day) { ?>
                         <td>
-                            <div class="row">
-                                <div class="col"><input type="number" value="<?php echo get_delivered_qty('erin', 1); ?>"  name="delivered[]" data-name="erin" data-date="<?php echo date('Y-m-d'); ?>" data-campaign="1"></div>
-                                <div class="col border-left"><input type="number" value="<?php echo get_delivered_qty('erin', 2); ?>"  name="delivered[]" data-name="erin" data-date="<?php echo date('Y-m-d'); ?>" data-campaign="2"></div>
+                            <div class="d-flex align-items-center justify-content-center">
+                                <input type="number" value="<?php echo get_request_qty('erin', date('Y-m-d', strtotime(''.$day.' this week'))); ?>" name="<?php echo $day; ?>[]" data-name="erin" data-date="<?php echo date('Y-m-d', strtotime(''.$day.' this week')); ?>">
                             </div>
                         </td>
-                    </tr>
-                    <tr>
-                        <td>tara</td>
-                        <?php foreach($days as $day) { ?>
-                            <td>
-                                <div class="row">
-                                    <div class="col"><input type="number" value="<?php echo get_request_qty('tara', date('Y-m-d', strtotime(''.$day.' this week')), 1); ?>" name="<?php echo $day; ?>[]" data-name="tara" data-date="<?php echo date('Y-m-d', strtotime(''.$day.' this week')); ?>" data-campaign="1"></div>
-                                    <div class="col border-left"><input type="number" value="<?php echo get_request_qty('tara', date('Y-m-d', strtotime(''.$day.' this week')), 2); ?>" name="<?php echo $day; ?>[]" data-name="tara" data-date="<?php echo date('Y-m-d', strtotime(''.$day.' this week')); ?>" data-campaign="2"></div>
-                                </div>
-                            </td>
-                        <?php } ?>
-                        <td data-request="total">
-                            <div class="row">
-                                <div class="col"><?php echo get_total_request_by('tara', 1); ?></div>
-                                <div class="col border-left"><?php echo get_total_request_by('tara', 2); ?></div>
-                            </div>
-                        </td>
+                    <?php } ?>
+                    <td data-request="total"><?php echo get_total_request_by('erin'); ?></td>
+                    <td>
+                        <div class="d-flex align-items-center justify-content-center">
+                            <input type="number" value="<?php echo get_delivered_qty('erin'); ?>"  name="delivered[]" data-name="erin" data-date="<?php echo date('Y-m-d'); ?>">
+                        </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>tara</td>
+                    <?php foreach($days as $day) { ?>
                         <td>
-                            <div class="row">
-                                <div class="col"><input type="number" value="<?php echo get_delivered_qty('tara', 1); ?>" name="delivered[]" data-name="tara" data-date="<?php echo date('Y-m-d'); ?>" data-campaign="1"></div>
-                                <div class="col border-left"><input type="number" value="<?php echo get_delivered_qty('tara', 2); ?>" name="delivered[]" data-name="tara" data-date="<?php echo date('Y-m-d'); ?>" data-campaign="2"></div>
+                            <div class="d-flex align-items-center justify-content-center">
+                                <input type="number" value="<?php echo get_request_qty('tara', date('Y-m-d', strtotime(''.$day.' this week'))); ?>" name="<?php echo $day; ?>[]" data-name="tara" data-date="<?php echo date('Y-m-d', strtotime(''.$day.' this week')); ?>">
                             </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>angela</td>
-                        <?php foreach($days as $day) { ?>
-                            <td>
-                                <div class="row">
-                                    <div class="col"><input type="number" value="<?php echo get_request_qty('angela', date('Y-m-d', strtotime(''.$day.' this week')), 1); ?>" name="<?php echo $day; ?>[]" data-name="angela" data-date="<?php echo date('Y-m-d', strtotime(''.$day.' this week')); ?>" data-campaign="1"></div>
-                                    <div class="col border-left"><input type="number" value="<?php echo get_request_qty('angela', date('Y-m-d', strtotime(''.$day.' this week')), 2); ?>" name="<?php echo $day; ?>[]" data-name="angela" data-date="<?php echo date('Y-m-d', strtotime(''.$day.' this week')); ?>" data-campaign="2"></div>
-                                </div>
-                            </td>
-                        <?php } ?>
+                        </td>    
+                    <?php } ?>
+                    <td data-request="total"><?php echo get_total_request_by('tara'); ?></td>
+                    <td>
+                        <div class="d-flex align-items-center justify-content-center">
+                            <input type="number" value="<?php echo get_delivered_qty('tara'); ?>" name="delivered[]" data-name="tara" data-date="<?php echo date('Y-m-d'); ?>">
+                        </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>angela</td>
+                    <?php foreach($days as $day) { ?>
+                        <td>
+                            <div class="d-flex align-items-center justify-content-center">
+                                <input type="number" value="<?php echo get_request_qty('angela', date('Y-m-d', strtotime(''.$day.' this week'))); ?>" name="<?php echo $day; ?>[]" data-name="angela" data-date="<?php echo date('Y-m-d', strtotime(''.$day.' this week')); ?>">
+                            </div>
+                        </td>    
+                    <?php } ?>
 
-                        <td data-request="total">
-                            <div class="row">
-                                <div class="col"><?php echo get_total_request_by('angela', 1); ?></div>
-                                <div class="col border-left"><?php echo get_total_request_by('angela', 2); ?></div>
-                            </div>
-                        </td>
+                    <td data-request="total"><?php echo get_total_request_by('angela'); ?></td>
+                    <td>
+                        <div class="d-flex align-items-center justify-content-center">
+                            <input type="number" value="<?php echo get_delivered_qty('angela'); ?>" name="delivered[]" data-name="angela" data-date="<?php echo date('Y-m-d'); ?>">
+                        </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>kristyna</td>
+                    <?php foreach($days as $day) { ?>
                         <td>
-                            <div class="row">
-                                <div class="col"><input type="number" value="<?php echo get_delivered_qty('angela', 1); ?>" name="delivered[]" data-name="angela" data-date="<?php echo date('Y-m-d'); ?>" data-campaign="1"></div>
-                                <div class="col border-left"><input type="number" value="<?php echo get_delivered_qty('angela', 2); ?>" name="delivered[]" data-name="angela" data-date="<?php echo date('Y-m-d'); ?>" data-campaign="2"></div>
+                            <div class="d-flex align-items-center justify-content-center">
+                                <input type="number" value="<?php echo get_request_qty('kristyna', date('Y-m-d', strtotime(''.$day.' this week'))); ?>" name="<?php echo $day; ?>[]" data-name="kristyna" data-date="<?php echo date('Y-m-d', strtotime(''.$day.' this week')); ?>">
                             </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>kristyna</td>
-                        <?php foreach($days as $day) { ?>
-                            <td>
-                                <div class="row">
-                                    <div class="col"><input type="number" value="<?php echo get_request_qty('kristyna', date('Y-m-d', strtotime(''.$day.' this week')), 1); ?>" name="<?php echo $day; ?>[]" data-name="kristyna" data-date="<?php echo date('Y-m-d', strtotime(''.$day.' this week')); ?>" data-campaign="1"></div>
-                                    <div class="col border-left"><input type="number" value="<?php echo get_request_qty('kristyna', date('Y-m-d', strtotime(''.$day.' this week')), 2); ?>" name="<?php echo $day; ?>[]" data-name="kristyna" data-date="<?php echo date('Y-m-d', strtotime(''.$day.' this week')); ?>" data-campaign="2"></div>
-                                </div>
-                            </td>
-                        <?php } ?>
-                        <td data-request="total">
-                            <div class="row">
-                                <div class="col"><?php echo get_total_request_by('kristyna', 1); ?></div>
-                                <div class="col border-left"><?php echo get_total_request_by('kristyna', 2); ?></div>
-                            </div>
-                        </td>
+                        </td>    
+                    <?php } ?>
+                    <td data-request="total"><?php echo get_total_request_by('kristyna'); ?></td>
+                    <td>
+                        <div class="d-flex align-items-center justify-content-center">                           
+                            <input type="number" value="<?php echo get_delivered_qty('kristyna'); ?>" name="delivered[]" data-name="kristyna" data-date="<?php echo date('Y-m-d'); ?>">
+                        </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>hanna</td>
+                    <?php foreach($days as $day) { ?>
                         <td>
-                            <div class="row">
-                                <div class="col"><input type="number" value="<?php echo get_delivered_qty('kristyna', 1); ?>" name="delivered[]" data-name="kristyna" data-date="<?php echo date('Y-m-d'); ?>" data-campaign="1"></div>
-                                <div class="col border-left"><input type="number" value="<?php echo get_delivered_qty('kristyna', 2); ?>" name="delivered[]" data-name="kristyna" data-date="<?php echo date('Y-m-d'); ?>" data-campaign="2"></div>
+                            <div class="d-flex align-items-center justify-content-center">
+                                <input type="number" value="<?php echo get_request_qty('hanna', date('Y-m-d', strtotime(''.$day.' this week'))); ?>" name="<?php echo $day; ?>[]" data-name="hanna" data-date="<?php echo date('Y-m-d', strtotime(''.$day.' this week')); ?>">
                             </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>hanna</td>
-                        <?php foreach($days as $day) { ?>
-                            <td>
-                                <div class="row">
-                                    <div class="col"><input type="number" value="<?php echo get_request_qty('hanna', date('Y-m-d', strtotime(''.$day.' this week')), 1); ?>" name="<?php echo $day; ?>[]" data-name="hanna" data-date="<?php echo date('Y-m-d', strtotime(''.$day.' this week')); ?>" data-campaign="1"></div>
-                                    <div class="col border-left"><input type="number" value="<?php echo get_request_qty('hanna', date('Y-m-d', strtotime(''.$day.' this week')), 2); ?>" name="<?php echo $day; ?>[]" data-name="hanna" data-date="<?php echo date('Y-m-d', strtotime(''.$day.' this week')); ?>" data-campaign="2"></div>
-                                </div>
-                            </td>
-                        <?php } ?>
-                        <td data-request="total">
-                            <div class="row">
-                                <div class="col"><?php echo get_total_request_by('hanna', 1); ?></div>
-                                <div class="col border-left"><?php echo get_total_request_by('hanna', 2); ?></div>
-                            </div>
-                        </td>
+                        </td>    
+                    <?php } ?>
+                    <td data-request="total"><?php echo get_total_request_by('hanna'); ?></td>
+                    <td>
+                        <div class="d-flex align-items-center justify-content-center">
+                            <input type="number" value="<?php echo get_delivered_qty('hanna'); ?>" name="delivered[]" data-name="hanna" data-date="<?php echo date('Y-m-d'); ?>">
+                        </div>
+                    </td> <!-- Delivered Kits -->
+                  </tr>
+				  <tr>
+                    <td>marissa</td>
+                    <?php foreach($days as $day) { ?>
                         <td>
-                            <div class="row">
-                                <div class="col"><input type="number" value="<?php echo get_delivered_qty('hanna', 1); ?>" name="delivered[]" data-name="hanna" data-date="<?php echo date('Y-m-d'); ?>" data-campaign="1"></div>
-                                <div class="col border-left"><input type="number" value="<?php echo get_delivered_qty('hanna', 2); ?>" name="delivered[]" data-name="hanna" data-date="<?php echo date('Y-m-d'); ?>" data-campaign="2"></div>
+                            <div class="d-flex align-items-center justify-content-center">
+                                <input type="number" value="<?php echo get_request_qty('marissa', date('Y-m-d', strtotime(''.$day.' this week'))); ?>" name="<?php echo $day; ?>[]" data-name="marissa" data-date="<?php echo date('Y-m-d', strtotime(''.$day.' this week')); ?>">
                             </div>
-                        </td> <!-- Delivered Kits -->
-                    </tr>
-                    <tr>
-                        <td>marissa</td>
-                        <?php foreach($days as $day) { ?>
-                            <td>
-                                <div class="row">
-                                    <div class="col"><input type="number" value="<?php echo get_request_qty('marissa', date('Y-m-d', strtotime(''.$day.' this week')), 1); ?>" name="<?php echo $day; ?>[]" data-name="marissa" data-date="<?php echo date('Y-m-d', strtotime(''.$day.' this week')); ?>" data-campaign="1"></div>
-                                    <div class="col border-left"><input type="number" value="<?php echo get_request_qty('marissa', date('Y-m-d', strtotime(''.$day.' this week')), 2); ?>" name="<?php echo $day; ?>[]" data-name="marissa" data-date="<?php echo date('Y-m-d', strtotime(''.$day.' this week')); ?>" data-campaign="2"></div>
-                                </div>
-                            </td>
-                        <?php } ?>
-                        <td data-request="total">
-                            <div class="row">
-                                <div class="col"><?php echo get_total_request_by('marissa', 1); ?></div>
-                                <div class="col border-left"><?php echo get_total_request_by('marissa', 2); ?></div>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="row">
-                                <div class="col"><input type="number" value="<?php echo get_delivered_qty('marissa', 1); ?>" name="delivered[]" data-name="marissa" data-date="<?php echo date('Y-m-d'); ?>" data-campaign="1"></div>
-                                <div class="col border-left"><input type="number" value="<?php echo get_delivered_qty('marissa', 2); ?>" name="delivered[]" data-name="marissa" data-date="<?php echo date('Y-m-d'); ?>" data-campaign="2"></div>
-                            </div>
-                        </td> <!-- Delivered Kits -->
-                    </tr>
+                        </td>    
+                    <?php } ?>
+                    <td data-request="total"><?php echo get_total_request_by('marissa'); ?></td>
+                    <td>
+                        <div class="d-flex align-items-center justify-content-center">
+                            <input type="number" value="<?php echo get_delivered_qty('marissa'); ?>" name="delivered[]" data-name="marissa" data-date="<?php echo date('Y-m-d'); ?>">
+                        </div>
+                    </td> <!-- Delivered Kits -->
+                  </tr>
 
-                    <tr>
-                        <td style="padding: .75rem 0 !important;">Goals</td>
-                        <td>15</td> <!-- Monday -->
-                        <td>15</td> <!-- Tuesday -->
-                        <td>15</td> <!-- Wednesday -->
-                        <td>15</td> <!-- Thursday -->
-                        <td>15</td> <!-- Friday -->
-                        <td>75</td> <!-- Req Totals -->
-                        <td>75</td> <!-- Delivered Kits -->
-                    </tr>
-                    <tr>
-                        <td>Total Reqs</td>
-                        <?php foreach($days as $day) { ?>
-                            <td data-total="<?php echo $day; ?>">
-                                <div class="row">
-                                    <div class="col"><?php echo get_total_request(date('Y-m-d', strtotime(''.$day.' this week')), 1); ?></div>
-                                    <div class="col border-left"><?php echo get_total_request(date('Y-m-d', strtotime(''.$day.' this week')), 2); ?></div>
-                                </div>
-                            </td>
-                        <?php } ?>
-                        <td data-total="request">
-                            <div class="row">
-                                <div class="col">0</div>
-                                <div class="col border-left">0</div>
-                            </div>
-                        </td>
-                        <td data-total="delivered">
-                            <div class="row">
-                                <div class="col"><?php echo get_total_delivered(1); ?></div>
-                                <div class="col border-left"><?php echo get_total_delivered(2); ?></div>
-                            </div>
-                        </td> <!-- Delivered Kits -->
-                    </tr>
+                  <tr>
+                    <td>Goals</td>
+                    <td>15</td> <!-- Monday -->
+                    <td>15</td> <!-- Tuesday -->
+                    <td>15</td> <!-- Wednesday -->
+                    <td>15</td> <!-- Thursday -->
+                    <td>15</td> <!-- Friday -->
+                    <td>75</td> <!-- Req Totals -->
+                    <td>75</td> <!-- Delivered Kits -->
+                  </tr>
+                  <tr>
+                    <td>Total Reqs</td>
+                    <?php foreach($days as $day) { ?>
+                        <td data-total="<?php echo $day; ?>"><?php echo get_total_request(date('Y-m-d', strtotime(''.$day.' this week'))); ?></td>
+                    <?php } ?>
+                    <td data-total="request">0</td>
+                    <td data-total="delivered"><?php echo get_total_delivered(); ?></td> <!-- Delivered Kits -->
+                  </tr>
                 </tbody>
             </table>
         </div>
@@ -276,100 +206,89 @@ if(!$permission) {
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-      <script>
-	      (function($) {
-		      //Kit Delivered
-		      $('input[name^="delivered"]').change(function(e) {
-			      $.ajax({
-				      type: 'POST',
-				      url: 'delivery.php',
-				      data: {
-					      name: $(this).attr('data-name'),
-					      quantity: $(this).val(),
-					      date: $(this).attr('data-date'),
-					      campaign: $(this).attr('data-campaign')
-				      },
-				      success: function (data) {
-					      let total = 0;
-					      $('input[name="delivered[]"][data-campaign="'+data+'"]').map(function() {
-						      total += parseInt($(this).val());
-					      });
-					      $('[data-total="delivered"] .col:eq('+(data-1)+')').text(total);
-
-					      $('.toast-body').text("Data has updated successfully.");
-					      $('.toast').toast('show');
-				      },
-				      error: function (data) {
-					      alert(data);
-				      },
-			      });
-		      });
+    <script>
+        (function($) {
+            //Kit Delivered
+            $('input[name^="delivered"]').change(function(e) {
+                $.ajax({
+                    type: 'POST',
+                    url: 'delivery.php',
+                    data: {
+                        name: $(this).attr('data-name'),
+                        quantity: $(this).val(),
+                        date: $(this).attr('data-date')
+                    },
+                    success: function (data) {
+                        let total = 0;
+                        $('input[name="delivered[]"]').map(function() {
+                            total += parseInt($(this).val());
+                        });
+                        $('[data-total="delivered"]').text(total);
+                        $('.toast-body').text(data);
+                        $('.toast').toast('show');
+                    },
+                    error: function (data) {
+                        alert(data);
+                    },
+                });                
+            });
 
 
-		      //Request
-		      let days = ["monday", "tuesday", "wednesday", "thursday", "friday"];
-		      days.map(function(day, key) {
-			      $('input[name^='+day+']').change(function(e) {
-				      $.ajax({
-					      type: 'POST',
-					      url: 'request.php',
-					      data: {
-						      name: $(this).attr('data-name'),
-						      request: $(this).val(),
-						      date: $(this).attr('data-date'),
-						      campaign: $(this).attr('data-campaign')
-					      },
-					      success: function (data) {
-						      let total = 0;
-						      $('input[name="'+day+'[]"][data-campaign="'+data+'"]').map(function() {
-							      total += parseInt($(this).val());
-						      });
-						      $('[data-total='+day+'] .col:eq('+(data-1)+')').text(total);
-						      $('.toast-body').text("Data has updated successfully.");
-						      $('.toast').toast('show');
-					      },
-					      error: function (data) {
-						      alert(data);
-					      },
-				      });
-			      });
-		      });
+            //Request
+            let days = ["monday", "tuesday", "wednesday", "thursday", "friday"];
+            days.map(function(day, key) {
+                $('input[name^='+day+']').change(function(e) {
+                    $.ajax({
+                        type: 'POST',
+                        url: 'request.php',
+                        data: {
+                            name: $(this).attr('data-name'),
+                            request: $(this).val(),
+                            date: $(this).attr('data-date')
+                        },
+                        success: function (data) {
+                            let total = 0;
+                            $('input[name="'+day+'[]"]').map(function() {
+                                total += parseInt($(this).val());
+                            });
+                            $('[data-total='+day+']').text(total);
+                            $('.toast-body').text(data);
+                            $('.toast').toast('show');
+                        },
+                        error: function (data) {
+                            alert(data);
+                        },
+                    });
+                });
+            });
 
+            let reqTotal = 0;
+            $('[data-request=total]').each(function() {
+                reqTotal += parseInt($(this).text());
+            });
+            $('[data-total=request]').text(reqTotal);
 
-		      let reqTotalCampain_1 = 0,
-			      reqTotalCampain_2 = 0;
+            //Button + -
+            $('<button type="button" class="btn btn-sm btn-dark dec"><img src="img/minus.svg" alt="Decrement"></button>').insertBefore('input[type="number"]');
+            $('<button type="button" class="btn btn-sm btn-dark inc"><img src="img/plus.svg" alt="Increment"></button>').insertAfter('input[type="number"]');
+            $(".inc, .dec").on("click", function() {
+                let button = $(this),
+                    newVal = 0,
+                    oldValue = button.siblings("input").val();
 
-		      $('[data-request=total]').each(function() {
-			      reqTotalCampain_1 += parseInt($(this).find('.col:eq(0)').text());
-			      reqTotalCampain_2 += parseInt($(this).find('.col:eq(1)').text());
-		      });
-
-		      $('[data-total=request]').find('div div:eq(0)').text(reqTotalCampain_1);
-		      $('[data-total=request]').find('div div:eq(1)').text(reqTotalCampain_2);
-
-
-
-		      //Button + -
-		      $('<button type="button" class="btn btn-sm btn-dark inc"><img src="img/plus.svg" alt="Increment"></button>').insertBefore('input[type="number"]');
-		      $('<button type="button" class="btn btn-sm btn-dark dec"><img src="img/minus.svg" alt="Decrement"></button>').insertAfter('input[type="number"]');
-		      $(".inc, .dec").on("click", function() {
-			      let button = $(this),
-				      newVal = 0,
-				      oldValue = button.siblings("input").val();
-
-			      if (button.hasClass('inc')) {
-				      newVal = parseFloat(oldValue) + 1;
-			      } else {
-				      // Don't allow decrementing below zero
-				      if (oldValue > 0) {
-					      newVal = parseFloat(oldValue) - 1;
-				      } else {
-					      newVal = 0;
-				      }
-			      }
-			      button.siblings("input").val(newVal).trigger('change');
-		      });
-	      }(jQuery));
-      </script>
+                if (button.hasClass('inc')) {
+                    newVal = parseFloat(oldValue) + 1;
+                } else {
+                    // Don't allow decrementing below zero
+                    if (oldValue > 0) {
+                        newVal = parseFloat(oldValue) - 1;
+                    } else {
+                        newVal = 0;
+                    }
+                }
+                button.siblings("input").val(newVal).trigger('change');
+            });
+        }(jQuery));
+    </script>
 </body>
 </html> 
