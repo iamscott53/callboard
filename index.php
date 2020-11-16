@@ -54,21 +54,21 @@
                         <?php foreach($days as $day) { ?>
                             <td>
                                 <div class="row">
-                                    <div class="col"><?php echo get_request_qty('erin', date('Y-m-d', strtotime(''.$day.' this week')), 1); ?></div>
-                                    <div class="col border-left"><?php echo get_request_qty('erin', date('Y-m-d', strtotime(''.$day.' this week')), 2); ?></div>
+                                    <div class="col"><?php echo get_request_qty('jackie', date('Y-m-d', strtotime(''.$day.' this week')), 1); ?></div>
+                                    <div class="col border-left"><?php echo get_request_qty('jackie', date('Y-m-d', strtotime(''.$day.' this week')), 2); ?></div>
                                 </div>
                             </td>
                         <?php } ?>
                         <td data-request="total">
                             <div class="row">
-                                <div class="col"><?php echo get_total_request_by('erin', 1); ?></div>
-                                <div class="col border-left"><?php echo get_total_request_by('erin', 2); ?></div>
+                                <div class="col"><?php echo get_total_request_by('jackie', 1); ?></div>
+                                <div class="col border-left"><?php echo get_total_request_by('jackie', 2); ?></div>
                             </div>
                         </td>
                         <td>
                             <div class="row">
-                                <div class="col"><?php echo get_delivered_qty('erin', 1); ?></div>
-                                <div class="col border-left"><?php echo get_delivered_qty('erin', 2); ?></div>
+                                <div class="col"><?php echo get_delivered_qty('jackie', 1); ?></div>
+                                <div class="col border-left"><?php echo get_delivered_qty('jackie', 2); ?></div>
                             </div>
                         </td>
                     </tr>
