@@ -29,6 +29,15 @@ class Database{
                 'CREATE TABLE IF NOT EXISTS kit_delivered(
                     name VARCHAR(191) NOT NULL PRIMARY KEY,
                     quantity INT NOT NULL DEFAULT 0,
+                    date DATE NOT NULL)',                    
+                'CREATE TABLE IF NOT EXISTS kit_requests_campaign_2(
+                    name VARCHAR(191) NOT NULL,
+                    request INT NOT NULL DEFAULT 0,
+                    date DATE NOT NULL,
+                    PRIMARY KEY(name, date))',
+                'CREATE TABLE IF NOT EXISTS kit_delivered_campaign_2(
+                    name VARCHAR(191) NOT NULL PRIMARY KEY,
+                    quantity INT NOT NULL DEFAULT 0,
                     date DATE NOT NULL)'
             ];
             foreach($sqls as $sql) {
