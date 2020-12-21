@@ -97,21 +97,21 @@ if(!$permission) {
                         <?php foreach($days as $day) { ?>
                             <td>
                                 <div class="row">
-                                    <div class="col"><input type="number" value="<?php echo get_request_qty('erin', date('Y-m-d', strtotime(''.$day.' this week')), 1); ?>" name="<?php echo $day; ?>[]" data-name="erin" data-date="<?php echo date('Y-m-d', strtotime(''.$day.' this week')); ?>" data-campaign="1"></div>
-                                    <div class="col border-left"><input type="number" value="<?php echo get_request_qty('erin', date('Y-m-d', strtotime(''.$day.' this week')), 2); ?>" name="<?php echo $day; ?>[]" data-name="erin" data-date="<?php echo date('Y-m-d', strtotime(''.$day.' this week')); ?>" data-campaign="2"></div>
+                                    <div class="col"><input type="number" value="<?php echo get_request_qty('jackie', date('Y-m-d', strtotime(''.$day.' this week')), 1); ?>" name="<?php echo $day; ?>[]" data-name="jackie" data-date="<?php echo date('Y-m-d', strtotime(''.$day.' this week')); ?>" data-campaign="1"></div>
+                                    <div class="col border-left"><input type="number" value="<?php echo get_request_qty('jackie', date('Y-m-d', strtotime(''.$day.' this week')), 2); ?>" name="<?php echo $day; ?>[]" data-name="jackie" data-date="<?php echo date('Y-m-d', strtotime(''.$day.' this week')); ?>" data-campaign="2"></div>
                                 </div>
                             </td>
                         <?php } ?>
                         <td data-request="total">
                             <div class="row">
-                                <div class="col"><?php echo get_total_request_by('erin', 1); ?></div>
-                                <div class="col border-left"><?php echo get_total_request_by('erin', 2); ?></div>
+                                <div class="col"><?php echo get_total_request_by('jackie', 1); ?></div>
+                                <div class="col border-left"><?php echo get_total_request_by('jackie', 2); ?></div>
                             </div>
                         </td>
                         <td>
                             <div class="row">
-                                <div class="col"><input type="number" value="<?php echo get_delivered_qty('erin', 1); ?>"  name="delivered[]" data-name="erin" data-date="<?php echo date('Y-m-d'); ?>" data-campaign="1"></div>
-                                <div class="col border-left"><input type="number" value="<?php echo get_delivered_qty('erin', 2); ?>"  name="delivered[]" data-name="erin" data-date="<?php echo date('Y-m-d'); ?>" data-campaign="2"></div>
+                                <div class="col"><input type="number" value="<?php echo get_delivered_qty('jackie', 1); ?>"  name="delivered[]" data-name="jackie" data-date="<?php echo date('Y-m-d'); ?>" data-campaign="1"></div>
+                                <div class="col border-left"><input type="number" value="<?php echo get_delivered_qty('jackie', 2); ?>"  name="delivered[]" data-name="jackie" data-date="<?php echo date('Y-m-d'); ?>" data-campaign="2"></div>
                             </div>
                         </td>
                     </tr>
@@ -228,6 +228,30 @@ if(!$permission) {
                             <div class="row">
                                 <div class="col"><input type="number" value="<?php echo get_delivered_qty('marissa', 1); ?>" name="delivered[]" data-name="marissa" data-date="<?php echo date('Y-m-d'); ?>" data-campaign="1"></div>
                                 <div class="col border-left"><input type="number" value="<?php echo get_delivered_qty('marissa', 2); ?>" name="delivered[]" data-name="marissa" data-date="<?php echo date('Y-m-d'); ?>" data-campaign="2"></div>
+                            </div>
+                        </td> <!-- Delivered Kits -->
+                    </tr>
+					
+					<tr>
+                        <td>dina</td>
+                        <?php foreach($days as $day) { ?>
+                            <td>
+                                <div class="row">
+                                    <div class="col"><input type="number" value="<?php echo get_request_qty('dina', date('Y-m-d', strtotime(''.$day.' this week')), 1); ?>" name="<?php echo $day; ?>[]" data-name="dina" data-date="<?php echo date('Y-m-d', strtotime(''.$day.' this week')); ?>" data-campaign="1"></div>
+                                    <div class="col border-left"><input type="number" value="<?php echo get_request_qty('dina', date('Y-m-d', strtotime(''.$day.' this week')), 2); ?>" name="<?php echo $day; ?>[]" data-name="dina" data-date="<?php echo date('Y-m-d', strtotime(''.$day.' this week')); ?>" data-campaign="2"></div>
+                                </div>
+                            </td>
+                        <?php } ?>
+                        <td data-request="total">
+                            <div class="row">
+                                <div class="col"><?php echo get_total_request_by('dina', 1); ?></div>
+                                <div class="col border-left"><?php echo get_total_request_by('dina', 2); ?></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="row">
+                                <div class="col"><input type="number" value="<?php echo get_delivered_qty('dina', 1); ?>" name="delivered[]" data-name="dina" data-date="<?php echo date('Y-m-d'); ?>" data-campaign="1"></div>
+                                <div class="col border-left"><input type="number" value="<?php echo get_delivered_qty('dina', 2); ?>" name="delivered[]" data-name="dina" data-date="<?php echo date('Y-m-d'); ?>" data-campaign="2"></div>
                             </div>
                         </td> <!-- Delivered Kits -->
                     </tr>
