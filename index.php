@@ -119,25 +119,25 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>kristyna</td>
+                        <td>MA4</td>
                         <?php foreach($days as $day) { ?>
                             <td>
                                 <div class="row">
-                                    <div class="col"><?php echo get_request_qty('kristyna', date('Y-m-d', strtotime(''.$day.' this week')), 1); ?></div>
-                                    <div class="col border-left"><?php echo get_request_qty('kristyna', date('Y-m-d', strtotime(''.$day.' this week')), 2); ?></div>
+                                    <div class="col"><?php echo get_request_qty('MA4', date('Y-m-d', strtotime(''.$day.' this week')), 1); ?></div>
+                                    <div class="col border-left"><?php echo get_request_qty('MA4', date('Y-m-d', strtotime(''.$day.' this week')), 2); ?></div>
                                 </div>
                             </td>
                         <?php } ?>
                         <td data-request="total">
                             <div class="row">
-                                <div class="col"><?php echo get_total_request_by('kristyna', 1); ?></div>
-                                <div class="col border-left"><?php echo get_total_request_by('kristyna', 2); ?></div>
+                                <div class="col"><?php echo get_total_request_by('MA4', 1); ?></div>
+                                <div class="col border-left"><?php echo get_total_request_by('MA4', 2); ?></div>
                             </div>
                         </td>
                         <td>
                             <div class="row">
-                                <div class="col"><?php echo get_delivered_qty('kristyna', 1); ?></div>
-                                <div class="col border-left"><?php echo get_delivered_qty('kristyna', 2); ?></div>
+                                <div class="col"><?php echo get_delivered_qty('MA4', 1); ?></div>
+                                <div class="col border-left"><?php echo get_delivered_qty('MA4', 2); ?></div>
                             </div>
                         </td>
                     </tr>
