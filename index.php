@@ -72,6 +72,7 @@
                             </div>
                         </td>
                     </tr>
+					
                     <tr>
                         <td>tara</td>
                         <?php foreach($days as $day) { ?>
@@ -95,6 +96,7 @@
                             </div>
                         </td>
                     </tr>
+					
                     <tr>
                         <td>angela</td>
                         <?php foreach($days as $day) { ?>
@@ -118,6 +120,7 @@
                             </div>
                         </td>
                     </tr>
+					
                     <tr>
                         <td>hanna</td>
                         <?php foreach($days as $day) { ?>
@@ -141,26 +144,51 @@
                             </div>
                         </td> <!-- Delivered Kits -->
                     </tr>
+					
                     <tr>
-                        <td>marissa</td>
+                        <td>kirsten</td>
                         <?php foreach($days as $day) { ?>
                             <td>
                                 <div class="row">
-                                    <div class="col"><?php echo get_request_qty('marissa', date('Y-m-d', strtotime(''.$day.' this week')), 1); ?></div>
-                                    <div class="col border-left"><?php echo get_request_qty('marissa', date('Y-m-d', strtotime(''.$day.' this week')), 2); ?></div>
+                                    <div class="col"><?php echo get_request_qty('kirsten', date('Y-m-d', strtotime(''.$day.' this week')), 1); ?></div>
+                                    <div class="col border-left"><?php echo get_request_qty('kirsten', date('Y-m-d', strtotime(''.$day.' this week')), 2); ?></div>
                                 </div>
                             </td>
                         <?php } ?>
                         <td data-request="total">
                             <div class="row">
-                                <div class="col"><?php echo get_total_request_by('marissa', 1); ?></div>
-                                <div class="col border-left"><?php echo get_total_request_by('marissa', 2); ?></div>
+                                <div class="col"><?php echo get_total_request_by('kirsten', 1); ?></div>
+                                <div class="col border-left"><?php echo get_total_request_by('kirsten', 2); ?></div>
                             </div>
                         </td>
                         <td>
                             <div class="row">
-                                <div class="col"><?php echo get_delivered_qty('marissa', 1); ?></div>
-                                <div class="col border-left"><?php echo get_delivered_qty('marissa', 2); ?></div>
+                                <div class="col"><?php echo get_delivered_qty('kirsten', 1); ?></div>
+                                <div class="col border-left"><?php echo get_delivered_qty('kirsten', 2); ?></div>
+                            </div>
+                        </td> <!-- Delivered Kits -->
+                    </tr>
+					
+					<tr>
+                        <td>victoria</td>
+                        <?php foreach($days as $day) { ?>
+                            <td>
+                                <div class="row">
+                                    <div class="col"><?php echo get_request_qty('victoria', date('Y-m-d', strtotime(''.$day.' this week')), 1); ?></div>
+                                    <div class="col border-left"><?php echo get_request_qty('victoria', date('Y-m-d', strtotime(''.$day.' this week')), 2); ?></div>
+                                </div>
+                            </td>
+                        <?php } ?>
+                        <td data-request="total">
+                            <div class="row">
+                                <div class="col"><?php echo get_total_request_by('victoria', 1); ?></div>
+                                <div class="col border-left"><?php echo get_total_request_by('victoria', 2); ?></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="row">
+                                <div class="col"><?php echo get_delivered_qty('victoria', 1); ?></div>
+                                <div class="col border-left"><?php echo get_delivered_qty('victoria', 2); ?></div>
                             </div>
                         </td> <!-- Delivered Kits -->
                     </tr>
