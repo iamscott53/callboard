@@ -170,6 +170,30 @@
                     </tr>
 					
 					<tr>
+                        <td>diana</td> <!-- name must be lowercase and unique -->
+                        <?php foreach($days as $day) { ?>
+                            <td>
+                                <div class="row">
+                                    <div class="col"><?php echo get_request_qty('diana', date('Y-m-d', strtotime(''.$day.' this week')), 1); ?></div>
+                                    <div class="col border-left"><?php echo get_request_qty('diana', date('Y-m-d', strtotime(''.$day.' this week')), 2); ?></div>
+                                </div>
+                            </td>
+                        <?php } ?>
+                        <td data-request="total">
+                            <div class="row">
+                                <div class="col"><?php echo get_total_request_by('diana', 1); ?></div>
+                                <div class="col border-left"><?php echo get_total_request_by('diana', 2); ?></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="row">
+                                <div class="col"><?php echo get_delivered_qty('diana', 1); ?></div>
+                                <div class="col border-left"><?php echo get_delivered_qty('diana', 2); ?></div>
+                            </div>
+                        </td>
+                    </tr>
+					
+					<tr>
                         <td>dina</td>
                         <?php foreach($days as $day) { ?>
                             <td>
