@@ -144,30 +144,7 @@
                             </div>
                         </td> <!-- Delivered Kits -->
                     </tr>
-					
-					<tr>
-                        <td>victoria</td>
-                        <?php foreach($days as $day) { ?>
-                            <td>
-                                <div class="row">
-                                    <div class="col"><?php echo get_request_qty('victoria', date('Y-m-d', strtotime(''.$day.' this week')), 1); ?></div>
-                                    <div class="col border-left"><?php echo get_request_qty('victoria', date('Y-m-d', strtotime(''.$day.' this week')), 2); ?></div>
-                                </div>
-                            </td>
-                        <?php } ?>
-                        <td data-request="total">
-                            <div class="row">
-                                <div class="col"><?php echo get_total_request_by('victoria', 1); ?></div>
-                                <div class="col border-left"><?php echo get_total_request_by('victoria', 2); ?></div>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="row">
-                                <div class="col"><?php echo get_delivered_qty('victoria', 1); ?></div>
-                                <div class="col border-left"><?php echo get_delivered_qty('victoria', 2); ?></div>
-                            </div>
-                        </td> <!-- Delivered Kits -->
-                    </tr>
+
 					
 					<tr>
                         <td>diana</td> <!-- name must be lowercase and unique -->
