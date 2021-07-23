@@ -28,6 +28,9 @@
         td .col {
             padding: .75rem 0;
         }
+		#hd-row {
+			display:none;
+		}
     </style>
   </head>
   <body>
@@ -97,8 +100,8 @@
                         </td>
                     </tr>
 					
-                    <tr>
-                        <td>angela</td>
+                    <tr id="hd-row">
+                        <td></td>
                         <?php foreach($days as $day) { ?>
                             <td>
                                 <div class="row">
