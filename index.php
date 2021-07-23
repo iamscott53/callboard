@@ -98,7 +98,7 @@
                     </tr>
 					
                     <tr>
-                        <td>angela</td>
+                        <td><!--angela--></td>
                         <?php foreach($days as $day) { ?>
                             <td>
                                 <div class="row">
