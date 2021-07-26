@@ -28,9 +28,6 @@
         td .col {
             padding: .75rem 0;
         }
-		#hd-row {
-			display:none;
-		}
     </style>
   </head>
   <body>
@@ -96,30 +93,6 @@
                             <div class="row">
                                 <div class="col"><?php echo get_delivered_qty('tara', 1); ?></div>
                                 <div class="col border-left"><?php echo get_delivered_qty('tara', 2); ?></div>
-                            </div>
-                        </td>
-                    </tr>
-					
-                    <tr id="hd-row">
-                        <td></td>
-                        <?php foreach($days as $day) { ?>
-                            <td>
-                                <div class="row">
-                                    <div class="col"><?php echo get_request_qty('angela', date('Y-m-d', strtotime(''.$day.' this week')), 1); ?></div>
-                                    <div class="col border-left"><?php echo get_request_qty('angela', date('Y-m-d', strtotime(''.$day.' this week')), 2); ?></div>
-                                </div>
-                            </td>
-                        <?php } ?>
-                        <td data-request="total">
-                            <div class="row">
-                                <div class="col"><?php echo get_total_request_by('angela', 1); ?></div>
-                                <div class="col border-left"><?php echo get_total_request_by('angela', 2); ?></div>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="row">
-                                <div class="col"><?php echo get_delivered_qty('angela', 1); ?></div>
-                                <div class="col border-left"><?php echo get_delivered_qty('angela', 2); ?></div>
                             </div>
                         </td>
                     </tr>
